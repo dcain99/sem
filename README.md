@@ -1,11 +1,9 @@
-![workflow](https://github.com/<UserName>/<RepositoryName>/actions/workflows/main.yml/badge.svg)
+# DevOps
 
-[![LICENSE](https://img.shields.io/github/license/dcain99/devops.svg?style=flat-square)](https://github.com/dcain99/devops/blob/master/LICENSE)
+[![Develop Build](https://img.shields.io/github/actions/workflow/status/dcain99/sem/main.yml?branch=develop&label=develop)](https://github.com/dcain99/sem/actions)
+[![License](https://img.shields.io/github/license/dcain99/sem)](https://github.com/dcain99/sem/blob/master/LICENSE)
+[![Release](https://img.shields.io/github/release/dcain99/sem/all.svg)](https://github.com/dcain99/sem/releases)
 
-
-[![Releases](https://img.shields.io/github/release/dcain99/devops/all.svg?style=flat-square)](https://github.com/dcain99/devops/releases)
-
-DevOps
 
 A brief, one-sentence description of the project and its purpose.
 
