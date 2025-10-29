@@ -61,7 +61,7 @@ public class App {
     }
 
     // ----------------------------------------------------------------------
-    // METHOD: printSalaries  <-- EXISTING METHOD
+    // METHOD: printSalaries  <-- UPDATED METHOD WITH ROBUST NULL CHECKS
     // ----------------------------------------------------------------------
 
     /**
@@ -70,18 +70,28 @@ public class App {
      * @param employees The list of employees to print.
      */
     public void printSalaries(ArrayList<Employee> employees) {
-        // Handle null input
+        // Handle null input list
         if (employees == null) {
-            System.out.println("No employees to print.");
+            System.out.println("No employees to print (List is null).");
+            return;
+        }
+
+        // Handle empty list
+        if (employees.isEmpty()) {
+            System.out.println("No employees to print (List is empty).");
             return;
         }
 
         // Print header
         System.out.println(String.format("%-10s %-15s %-20s %-8s", "Emp No", "First Name", "Last Name", "Salary"));
+
         // Loop over all employees in the list
         for (Employee emp : employees) {
-            // Handle null employee in list
-            if (emp == null) continue;
+            // Handle null employee in list to prevent NullPointerException
+            if (emp == null) {
+                System.out.println("--- NULL Employee Record Encountered ---");
+                continue;
+            }
 
             String emp_string =
                     String.format("%-10s %-15s %-20s %-8s",
@@ -130,7 +140,7 @@ public class App {
     }
 
     // ----------------------------------------------------------------------
-    // METHOD: getSalariesByDepartment  <-- NEW METHOD IMPLEMENTATION
+    // METHOD: getSalariesByDepartment
     // ----------------------------------------------------------------------
 
     /**
@@ -189,7 +199,7 @@ public class App {
 
 
     // ----------------------------------------------------------------------
-    // METHOD: getDepartment  <-- UPDATED TO INCLUDE LOGIC
+    // METHOD: getDepartment
     // ----------------------------------------------------------------------
 
     /**
@@ -227,7 +237,7 @@ public class App {
 
 
     // ----------------------------------------------------------------------
-    // METHOD: displayEmployee (kept for original functionality)
+    // METHOD: displayEmployee
     // ----------------------------------------------------------------------
 
     /**
@@ -254,7 +264,7 @@ public class App {
     }
 
     // ----------------------------------------------------------------------
-    // METHOD: getEmployee (kept for original functionality)
+    // METHOD: getEmployee
     // ----------------------------------------------------------------------
 
     /**
