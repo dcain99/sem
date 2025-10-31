@@ -1,4 +1,4 @@
-package com.napier.sem;
+package com.napier.devops;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;

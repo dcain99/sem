@@ -1,6 +1,4 @@
-package com.napier.sem;
-
-import com.napier.sem.devops.Employee;
+package com.napier.sem.devops;
 
 public class Department {
     public String dept_no;

@@ -1,6 +1,4 @@
-package com.napier.sem;
-
-import com.napier.sem.devops.Employee;
+package com.napier.sem.devops;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -63,7 +61,7 @@ public class App {
     }
 
     // ----------------------------------------------------------------------
-    // METHOD: printSalaries  <-- UPDATED METHOD WITH ROBUST NULL CHECKS
+    // METHOD: printSalaries  <-- EXISTING METHOD
     // ----------------------------------------------------------------------
 
     /**
@@ -72,28 +70,18 @@ public class App {
      * @param employees The list of employees to print.
      */
     public void printSalaries(ArrayList<Employee> employees) {
-        // Handle null input list
+        // Handle null input
         if (employees == null) {
-            System.out.println("No employees to print (List is null).");
-            return;
-        }
-
-        // Handle empty list
-        if (employees.isEmpty()) {
-            System.out.println("No employees to print (List is empty).");
+            System.out.println("No employees to print.");
             return;
         }
 
         // Print header
         System.out.println(String.format("%-10s %-15s %-20s %-8s", "Emp No", "First Name", "Last Name", "Salary"));
-
         // Loop over all employees in the list
         for (Employee emp : employees) {
-            // Handle null employee in list to prevent NullPointerException
-            if (emp == null) {
-                System.out.println("--- NULL Employee Record Encountered ---");
-                continue;
-            }
+            // Handle null employee in list
+            if (emp == null) continue;
 
             String emp_string =
                     String.format("%-10s %-15s %-20s %-8s",
@@ -142,7 +130,7 @@ public class App {
     }
 
     // ----------------------------------------------------------------------
-    // METHOD: getSalariesByDepartment
+    // METHOD: getSalariesByDepartment  <-- NEW METHOD IMPLEMENTATION
     // ----------------------------------------------------------------------
 
     /**
@@ -201,7 +189,7 @@ public class App {
 
 
     // ----------------------------------------------------------------------
-    // METHOD: getDepartment
+    // METHOD: getDepartment  <-- UPDATED TO INCLUDE LOGIC
     // ----------------------------------------------------------------------
 
     /**
@@ -239,7 +227,7 @@ public class App {
 
 
     // ----------------------------------------------------------------------
-    // METHOD: displayEmployee
+    // METHOD: displayEmployee (kept for original functionality)
     // ----------------------------------------------------------------------
 
     /**
@@ -266,7 +254,7 @@ public class App {
     }
 
     // ----------------------------------------------------------------------
-    // METHOD: getEmployee
+    // METHOD: getEmployee (kept for original functionality)
     // ----------------------------------------------------------------------
 
     /**
@@ -327,7 +315,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                db = DriverManager.getConnection("jdbc:mysql://db:3306/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                db = DriverManager.getConnection("jdbc:mysql://localhost:33060/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
