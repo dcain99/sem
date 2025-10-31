@@ -1,4 +1,4 @@
-package com.napier.sem.devops;
+package com.napier.devops;
 
 public class Department {
     public String dept_no;
