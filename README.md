@@ -5,18 +5,4 @@
 [![Release](https://img.shields.io/github/release/dcain99/sem/all.svg)](https://github.com/dcain99/sem/releases)
 
 
-A brief, one-sentence description of the project and its purpose.
-
-Table of Contents Installation
-
-Usage
-
-Features
-
-Contributing
-
-License
-
-Contact
-
-Installation Provide clear, step-by-step instructions on how to set up the project locally. Include any prerequisites or dependencies that need to be installed first.
+Description...
